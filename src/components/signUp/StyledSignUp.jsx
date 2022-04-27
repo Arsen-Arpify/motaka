@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PhoneInput from "./SignUp"
 
 
 const Root = styled.div`
@@ -53,7 +54,7 @@ const Right = styled.div`
   }
 
   & form {
-    input:nth-child(1) {
+    input:nth-of-type(1) {
       position: absolute;
       width: 354px;
       height: 48px;
@@ -64,7 +65,7 @@ const Right = styled.div`
       border-radius: 10px;
     }
 
-    input:nth-child(2) {
+    input:nth-of-type(2) {
       position: absolute;
       width: 354px;
       height: 48px;
@@ -77,7 +78,7 @@ const Right = styled.div`
       border-radius: 10px;
     }
 
-    input:nth-child(3) {
+    input:nth-of-type(3) {
       position: absolute;
       width: 354px;
       height: 48px;
@@ -88,19 +89,18 @@ const Right = styled.div`
       border-radius: 10px;
     }
 
-    input:nth-child(4) {
-      position: absolute;
-      width: 354px;
-      height: 48px;
-      left: 826px;
-      top: 762px;
+    //PhoneInput {
+    //  position: absolute;
+    //  width: 354px;
+    //  height: 48px;
+    //  left: 826px;
+    //  top: 762px;
+    //  border: 0.5px solid #D9DADB;
+    //  box-sizing: border-box;
+    //  border-radius: 10px;
+    //}
 
-      border: 0.5px solid #D9DADB;
-      box-sizing: border-box;
-      border-radius: 10px;
-    }
-
-    input:nth-child(5) {
+    input:nth-of-type(4) {
       position: absolute;
       width: 354px;
       height: 48px;
@@ -111,7 +111,7 @@ const Right = styled.div`
       border-radius: 10px;
     }
 
-    input:nth-child(6) {
+    input:nth-of-type(5) {
       position: absolute;
       width: 354px;
       height: 48px;
@@ -193,6 +193,25 @@ const Right = styled.div`
       top: 890px;
       background: #0DC46E;
       border-radius: 10px;
+    }
+
+    & span:nth-of-type(2) {
+      color: #A3A3A3;
+      position: absolute;
+      top: 615px;
+      right: -470px;
+      cursor: pointer;
+    }
+
+    span:nth-of-type(3) {
+      color: #A3A3A3;
+      position: absolute;
+      top: 700px;
+      right: -470px;
+      cursor: pointer;
+    }
+    & PhoneInput{
+      
     }
   }
 `;

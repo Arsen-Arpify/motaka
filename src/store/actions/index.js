@@ -1,1 +1,1 @@
-export * from "./actionPass"
+export * from "./actionSignUp"

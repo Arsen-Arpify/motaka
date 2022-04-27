@@ -3,14 +3,22 @@ import {Styled} from "./StyledSignUp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import {faEyeSlash} from "@fortawesome/free-solid-svg-icons";
-
-
-
-
+import {useDispatch, useSelector} from "react-redux";
+import {showPass, reShowPass} from "../../store/actions";
+import PhoneInput from "react-phone-input-2";
 
 
 export const SignUp = () => {
+    const dispatch = useDispatch();
+    const state = useSelector((state) => state)
+    const {isPasswordShow, isRePasswordShow} = state
 
+    const funcPasswordShow = (payload) => {
+        dispatch(showPass(payload))
+    };
+    const reFuncPasswordShow = (payload) => {
+        dispatch(reShowPass(payload))
+    };
     return (
 
 
@@ -31,12 +39,12 @@ export const SignUp = () => {
                 <h1>Create Account</h1>
                 <Styled.Social>
                     <div>
-                        <span><FontAwesomeIcon icon={faGoogle}  />  Sign up with Google</span>
-                        <span><FontAwesomeIcon icon={faEyeSlash}/> </span>
+                        <span><FontAwesomeIcon icon={faGoogle}/>  Sign up with Google</span>
+
                     </div>
                     <div>
-                        <span><FontAwesomeIcon icon={faFacebook} /> Sign up with Facebook</span>
-                        <span><FontAwesomeIcon icon={faEyeSlash}/> </span>
+                        <span><FontAwesomeIcon icon={faFacebook}/> Sign up with Facebook</span>
+
                     </div>
                 </Styled.Social>
                 <p>-OR-</p>
@@ -44,9 +52,12 @@ export const SignUp = () => {
                     <input type="text" placeholder={'First Name'}/>
                     <input type="text" placeholder={'Last Name'}/>
                     <input type="email" placeholder={'Email'}/>
-                    <input type="number" placeholder={'Phone Number'}/>
-                    <input type="password" placeholder={'Password'} />
-                    <input type="password" placeholder={'Reset Password'}/>
+                    <PhoneInput value={"+374"} placeholder={'Phone Number'}/>
+                    <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}/>
+                    <span onClick={() => funcPasswordShow(isPasswordShow)}><FontAwesomeIcon icon={faEyeSlash}/> </span>
+                    <input type={isRePasswordShow ? "text" : "password"} placeholder={'Reset Password'}/>
+                    <span onClick={() => reFuncPasswordShow(isRePasswordShow)}><FontAwesomeIcon
+                        icon={faEyeSlash}/> </span>
                     <div>
                         <div>
                             <input type={"radio"} value={"User"}/>
@@ -61,7 +72,6 @@ export const SignUp = () => {
                 </form>
             </Styled.Right>
         </Styled.Root>
-
 
 
     );

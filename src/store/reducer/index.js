@@ -1,1 +1,1 @@
-export * from "./reducerPass"
+export * from "./reducerSignUp"
