@@ -2,7 +2,7 @@ import { Route } from "react-router";
 import {routes} from "./routes";
 
 
-function App() {
+export const App=()=> {
     return (
         <div>
             {routes.map((item, index) => (
@@ -17,4 +17,4 @@ function App() {
     );
 }
 
-export default App;
+

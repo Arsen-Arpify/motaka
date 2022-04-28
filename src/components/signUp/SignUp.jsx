@@ -2,16 +2,16 @@ import React from 'react';
 import {Styled} from "./StyledSignUp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
-import {faEyeSlash} from "@fortawesome/free-solid-svg-icons";
+import {faEyeSlash, faSquare} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
-import {showPass, reShowPass} from "../../store/actions";
+import {showPass, reShowPass, checkType, checkTypeProv} from "../../store/actions";
+import "./App.css"
 import PhoneInput from "react-phone-input-2";
 
-
-export const SignUp = () => {
+export const SignUp =()=>{
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
-    const {isPasswordShow, isRePasswordShow} = state
+    const {isPasswordShow, isRePasswordShow, isCheckedUser, isCheckedProv} = state
 
     const funcPasswordShow = (payload) => {
         dispatch(showPass(payload))
@@ -19,21 +19,36 @@ export const SignUp = () => {
     const reFuncPasswordShow = (payload) => {
         dispatch(reShowPass(payload))
     };
+    const funcCheckUser = (payload) => {
+        dispatch(checkType(payload))
+    }
+    const funcCheckProv = (payload) => {
+        dispatch(checkTypeProv(payload))
+
+    }
+
+
     return (
 
-
         <Styled.Root>
-
+            <Styled.SquareUser onClick={() => funcCheckUser(isCheckedUser)}>
+                <div style={isCheckedUser ? {backgroundColor: "#0DC46E"} : {backgroundColor: "transparent"}}>
+                </div>
+            </Styled.SquareUser>
+            <Styled.SquareProv onClick={() => funcCheckProv(isCheckedProv)}>
+                <div style={isCheckedProv ? {backgroundColor: "#0DC46E"} : {backgroundColor: "transparent"}}>
+                </div>
+            </Styled.SquareProv>
             <Styled.Left>
-                <Styled.Sheip1>
-                </Styled.Sheip1>
+                <Styled.Shape1>
+                </Styled.Shape1>
                 <Styled.Text>
                     <h1>HELLO Friend!</h1>
                     <p>Enter your personal details and start journey with us</p>
                     <button>Sign Up</button>
                 </Styled.Text>
-                <Styled.Sheip2>
-                </Styled.Sheip2>
+                <Styled.Shape2>
+                </Styled.Shape2>
             </Styled.Left>
             <Styled.Right>
                 <h1>Create Account</h1>
@@ -52,7 +67,7 @@ export const SignUp = () => {
                     <input type="text" placeholder={'First Name'}/>
                     <input type="text" placeholder={'Last Name'}/>
                     <input type="email" placeholder={'Email'}/>
-                    <PhoneInput value={"+374"} placeholder={'Phone Number'}/>
+                    {/*<input type="number" value={+374} placeholder={'Phone Number'}/>*/}
                     <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}/>
                     <span onClick={() => funcPasswordShow(isPasswordShow)}><FontAwesomeIcon icon={faEyeSlash}/> </span>
                     <input type={isRePasswordShow ? "text" : "password"} placeholder={'Reset Password'}/>
@@ -60,16 +75,19 @@ export const SignUp = () => {
                         icon={faEyeSlash}/> </span>
                     <div>
                         <div>
-                            <input type={"radio"} value={"User"}/>
                             <label htmlFor="User">User</label>
                         </div>
                         <div>
-                            <input type={"radio"} value={"Service Provider"}/>
                             <label htmlFor="Service Provider">Service Provider</label>
                         </div>
                     </div>
                     <button>Sign Up</button>
+
                 </form>
+
+                    <PhoneInput className="App" country={'am'} value={'374'} placeholder={'Phone Number'} type={'tel'}/>
+
+
             </Styled.Right>
         </Styled.Root>
 
