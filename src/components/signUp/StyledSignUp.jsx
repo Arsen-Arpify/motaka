@@ -105,6 +105,7 @@ const Right = styled.div`
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
       border-radius: 10px;
+      padding: 5px;
     }
 
     input:nth-of-type(2) {
@@ -113,11 +114,11 @@ const Right = styled.div`
       height: 48px;
       left: 170px;
       top: 602px;
-
       background: #FFFFFF;
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
       border-radius: 10px;
+      padding: 5px;
     }
 
     input:nth-of-type(3) {
@@ -129,6 +130,7 @@ const Right = styled.div`
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
       border-radius: 10px;
+      padding: 5px;
     }
 
 
@@ -141,6 +143,7 @@ const Right = styled.div`
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
       border-radius: 10px;
+      padding: 5px;
     }
 
     //input:nth-of-type(4) {
@@ -163,6 +166,7 @@ const Right = styled.div`
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
       border-radius: 10px;
+      padding: 5px;
     }
 
     & div {
@@ -183,6 +187,7 @@ const Right = styled.div`
           display: flex;
           align-items: center;
           color: #707280;
+          cursor: pointer;
 
         }
       }
@@ -203,6 +208,7 @@ const Right = styled.div`
           display: flex;
           align-items: center;
           color: #707280;
+          cursor: pointer;
 
         }
       }
@@ -348,7 +354,23 @@ const Social = styled.div`
     cursor: pointer;
     color: #A3A3A3;
     padding: 5px;
-
+    & img{
+      width: 24px;
+    }
+    & p{
+      position: absolute;
+      width: 159px;
+      height: 16px;
+      left: 40px;
+      top: 0px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      /* identical to box height, or 100% */
+      color: #747D8F;
+    }
   }
 
   & div:last-child {
@@ -363,6 +385,23 @@ const Social = styled.div`
     cursor: pointer;
     color: #A3A3A3;
     padding: 5px;
+    & img{
+      width: 24px;
+    }
+    & p{
+      position: absolute;
+      width: 180px;
+      height: 16px;
+      left: 40px;
+      top: 0px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      /* identical to box height, or 100% */
+      color: #747D8F;
+    }
   }
 `;
 

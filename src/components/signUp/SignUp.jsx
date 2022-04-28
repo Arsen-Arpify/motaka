@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {showPass, reShowPass, checkType, checkTypeProv} from "../../store/actions";
 import "./App.css"
 import PhoneInput from "react-phone-input-2";
+import G from "../image/G.png";
+import F from "../image/F.png";
 
 export const SignUp =()=>{
     const dispatch = useDispatch();
@@ -54,11 +56,12 @@ export const SignUp =()=>{
                 <h1>Create Account</h1>
                 <Styled.Social>
                     <div>
-                        <span><FontAwesomeIcon icon={faGoogle}/>  Sign up with Google</span>
-
+                        <img src={G} alt=""/>
+                        <p>Sign up with Google</p>
                     </div>
                     <div>
-                        <span><FontAwesomeIcon icon={faFacebook}/> Sign up with Facebook</span>
+                        <img src={F} alt=""/>
+                        <p>Sign up with Facebook</p>
 
                     </div>
                 </Styled.Social>
@@ -75,10 +78,10 @@ export const SignUp =()=>{
                         icon={faEyeSlash}/> </span>
                     <div>
                         <div>
-                            <label htmlFor="User">User</label>
+                            <label htmlFor="User" onClick={() => funcCheckUser(isCheckedUser)}>User</label>
                         </div>
                         <div>
-                            <label htmlFor="Service Provider">Service Provider</label>
+                            <label htmlFor="Service Provider" onClick={() => funcCheckProv(isCheckedProv)}>Service Provider</label>
                         </div>
                     </div>
                     <button>Sign Up</button>

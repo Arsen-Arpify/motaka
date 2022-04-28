@@ -5,8 +5,8 @@ import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import {faEyeSlash, faSquare} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
 import {showPass} from "../../store/actions";
-import G from './image/G.png'
-import F from './image/F.png'
+import G from '../image/G.png'
+import F from '../image/F.png'
 
 
 export const SignIn =()=>{
