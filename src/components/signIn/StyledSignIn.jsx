@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Root = styled.div`
   display: flex;
 `;
@@ -15,8 +14,6 @@ const Left = styled.div`
   //border-bottom: 1px solid red;
   //border-left: 1px solid red;
   overflow: hidden;
-
-
 `;
 const Right = styled.div`
   position: absolute;
@@ -73,7 +70,6 @@ const Right = styled.div`
       height: 48px;
       left: 362px;
       top: 602px;
-
       background: #FFFFFF;
       border: 0.5px solid #D9DADB;
       box-sizing: border-box;
@@ -206,7 +202,23 @@ const Social = styled.div`
     cursor: pointer;
     color: #A3A3A3;
     padding: 5px;
-
+    & img{
+      width: 24px;
+    }
+        & p{
+      position: absolute;
+      width: 159px;
+      height: 16px;
+      left: 40px;
+      top: 0px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      /* identical to box height, or 100% */
+      color: #747D8F;
+    }
   }
 
   & div:last-child {
@@ -221,8 +233,35 @@ const Social = styled.div`
     cursor: pointer;
     color: #A3A3A3;
     padding: 5px;
+    & img{
+      width: 24px;
+    }
+    & p{
+      position: absolute;
+      width: 180px;
+      height: 16px;
+      left: 40px;
+      top: 0px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      /* identical to box height, or 100% */
+      color: #747D8F;
+    }
+  }
+`;
+const Forgot =styled.div`
+  position: absolute;
+  top: 680px;
+  right: 365px;
+  
+  & a{
+    text-decoration: none;
+    color: #A3A3A3;
   }
 `;
 
 
-export const Styled = {Root, Right, Left, Shape1, Text, Shape2, Social,};
+export const Styled = {Root, Right, Left, Shape1, Text, Shape2, Social,Forgot};

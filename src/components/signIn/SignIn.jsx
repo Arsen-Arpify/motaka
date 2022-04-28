@@ -5,8 +5,9 @@ import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
 import {faEyeSlash, faSquare} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
 import {showPass} from "../../store/actions";
+import G from './image/G.png'
+import F from './image/F.png'
 
-import PhoneInput from "react-phone-input-2";
 
 export const SignIn =()=>{
     const dispatch = useDispatch();
@@ -37,11 +38,12 @@ export const SignIn =()=>{
                 <h1>Sign In to Motaka</h1>
                 <Styled.Social>
                     <div>
-                        <span><FontAwesomeIcon icon={faGoogle}/>  Sign up with Google</span>
-
+                        <img src={G} alt=""/>
+                        <p>Sign up with Google</p>
                     </div>
                     <div>
-                        <span><FontAwesomeIcon icon={faFacebook}/> Sign up with Facebook</span>
+                        <img src={F} alt=""/>
+                        <p>Sign up with Facebook</p>
 
                     </div>
                 </Styled.Social>
@@ -56,6 +58,10 @@ export const SignIn =()=>{
                     <button>Sign Up</button>
 
                 </form>
+                <Styled.Forgot>
+                    <a href="">Forgot Password?</a>
+                </Styled.Forgot>
+
 
 
 
