@@ -1,6 +1,7 @@
 import {HomePage} from "../components/homePage";
 import {SignUp} from "../components/signUp";
 import {SignIn} from "../components/signIn";
+import {JobListing} from "../components/jobListing";
 
 export const routes = [
     {
@@ -17,6 +18,11 @@ export const routes = [
         path: "/SignIn",
         exact: true,
         page: () => <SignIn/>,
+    },
+    {
+        path: "/JobListing",
+        exact: true,
+        page: () => <JobListing/>,
     },
 
 ];

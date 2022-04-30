@@ -10,6 +10,7 @@ import PhoneInput from "react-phone-input-2";
 import G from "../image/G.png";
 import F from "../image/F.png";
 
+
 export const SignUp =()=>{
     const dispatch = useDispatch();
     const state = useSelector((state) => state)

@@ -7,9 +7,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {showPass} from "../../store/actions";
 import G from '../image/G.png'
 import F from '../image/F.png'
+import {useState} from "react";
 
 
-export const SignIn =()=>{
+
+
+export const SignIn = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
     const {isPasswordShow, isRePasswordShow, isCheckedUser, isCheckedProv} = state
@@ -19,6 +22,55 @@ export const SignIn =()=>{
     };
 
 
+    const url = "https://motaka.herokuapp.com/login"
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+
+
+        let formData = new FormData();
+
+        formData.append("phone", phone);
+       formData.append("password", password);
+
+        // console.log(formData);
+
+        // let requestOptions = {
+        //     method: 'POST',
+        //     body: formData,
+        //     // headers:
+        //     //     {'Content-Type': 'application/json'}
+        // };
+
+        // fetch(url, requestOptions)
+        //     .then(response => response.text())
+        //     .then(result => console.log(result))
+        //     .catch(error => console.log('error', error));
+
+
+
+    fetch('https://motaka.herokuapp.com/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            phone: phone,
+            password: password
+
+        }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+};
     return (
 
         <Styled.Root>
@@ -48,10 +100,21 @@ export const SignIn =()=>{
                     </div>
                 </Styled.Social>
                 <p>-OR-</p>
-                <form action="" method={"post"}>
-                    <input type="text" placeholder={'Nike Name'}/>
-
-                    <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}/>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        value={phone}
+                        onChange={e=>setPhone(e.target.value)}
+                        placeholder={'Nike Name'}
+                        type="text"
+                        name="phone"
+                        required
+                    />
+                    <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}
+                           value={password}
+                           onChange={e=>setPassword(e.target.value)}
+                           name="password"
+                           required
+                    />
                     <span onClick={() => funcPasswordShow(isPasswordShow)}><FontAwesomeIcon
                         icon={faEyeSlash}/> </span>
 
@@ -61,8 +124,6 @@ export const SignIn =()=>{
                 <Styled.Forgot>
                     <a href="">Forgot Password?</a>
                 </Styled.Forgot>
-
-
 
 
             </Styled.Right>

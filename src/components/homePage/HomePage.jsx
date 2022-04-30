@@ -10,6 +10,9 @@ export const HomePage = () => {
     const SignIn = (value) => {
         history.push(value);
     }
+    const JobListing = (value) => {
+        history.push(value);
+    }
     return (
         <Styled.Container>
             <Styled.NavBar>
@@ -26,6 +29,7 @@ export const HomePage = () => {
             </Styled.NavBar>
             <div><button onClick={() => SignUp('SignUp')}>SignUp</button></div>
             <div><button onClick={() => SignIn('SignIn')}>SignIn</button></div>
+            <div><button onClick={() => JobListing('JobListing')}>JobListing</button></div>
         </Styled.Container>
 
 
