@@ -10,8 +10,6 @@ import F from '../image/F.png'
 import {useState} from "react";
 
 
-
-
 export const SignIn = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
@@ -34,7 +32,7 @@ export const SignIn = () => {
         let formData = new FormData();
 
         formData.append("phone", phone);
-       formData.append("password", password);
+        formData.append("password", password);
 
         // console.log(formData);
 
@@ -51,26 +49,25 @@ export const SignIn = () => {
         //     .catch(error => console.log('error', error));
 
 
+        fetch('https://motaka.herokuapp.com/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                phone: phone,
+                password: password
 
-    fetch('https://motaka.herokuapp.com/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            phone: phone,
-            password: password
-
-        }),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+            }),
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-};
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
     return (
 
         <Styled.Root>
@@ -103,15 +100,17 @@ export const SignIn = () => {
                 <form onSubmit={handleSubmit}>
                     <input
                         value={phone}
-                        onChange={e=>setPhone(e.target.value)}
+                        onChange={e => setPhone(e.target.value)}
                         placeholder={'Nike Name'}
                         type="text"
                         name="phone"
+                        autoComplete={'current-phone'}
                         required
                     />
                     <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}
                            value={password}
-                           onChange={e=>setPassword(e.target.value)}
+                           autoComplete={'current-password'}
+                           onChange={e => setPassword(e.target.value)}
                            name="password"
                            required
                     />
