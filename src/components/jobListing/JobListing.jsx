@@ -4,17 +4,23 @@ import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import create from "zustand";
 
-const usStore = create((set) => ({
-    count: false,
 
-    funcJobList: () => set((state) => ({...state, count: !(state).count})),
+
+
+export const useStore = create((set) => ({
+
+        mek:[{count: false}],
+
+
+
+ funcJobList: () => set((state) => ({...state, count: !(state).count})),
 
 }))
 
 export const JobListing = () => {
 
 
-    const {count, funcJobList} = usStore()
+    const {count, funcJobList} = useStore()
     console.log(count)
     return (
         <Styled.Root>

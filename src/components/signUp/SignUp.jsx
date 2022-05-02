@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Styled} from "./StyledSignUp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
@@ -11,13 +11,17 @@ import G from "../image/G.png";
 import F from "../image/F.png";
 
 
+
+
 export const SignUp =()=>{
+
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
     const {isPasswordShow, isRePasswordShow, isCheckedUser, isCheckedProv} = state
 
     const funcPasswordShow = (payload) => {
         dispatch(showPass(payload))
+
     };
     const reFuncPasswordShow = (payload) => {
         dispatch(reShowPass(payload))
