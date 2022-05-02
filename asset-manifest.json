@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/motaka/static/css/main.f7f5c94a.css",
+    "main.js": "/motaka/static/js/main.70be8c0c.js",
+    "index.html": "/motaka/index.html",
+    "main.f7f5c94a.css.map": "/motaka/static/css/main.f7f5c94a.css.map",
+    "main.70be8c0c.js.map": "/motaka/static/js/main.70be8c0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7f5c94a.css",
+    "static/js/main.70be8c0c.js"
+  ]
+}
