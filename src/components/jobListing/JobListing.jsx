@@ -1,19 +1,19 @@
 import React from 'react';
 import {Styled} from "./StyledJobListing";
-import {faUser} from "@fortawesome/free-regular-svg-icons";
+import {faClock, faUser} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import create from "zustand";
-
-
+import ironing from "../image/ironing.jpg"
+import {faHeart} from "@fortawesome/free-regular-svg-icons";
+import {faLocation} from "@fortawesome/free-solid-svg-icons";
 
 
 export const useStore = create((set) => ({
 
-        mek:[{count: false}],
+    count: false,
 
 
-
- funcJobList: () => set((state) => ({...state, count: !(state).count})),
+    funcJobList: () => set((state) => ({...state, count: !(state).count})),
 
 }))
 
@@ -24,76 +24,144 @@ export const JobListing = () => {
     console.log(count)
     return (
         <Styled.Root>
-            <Styled.Container>
-                <nav>
-                    <div>JOB</div>
+            <body>
+            <nav>
+                <div>JOB</div>
+                <div>
+                    <p>Categories</p>
+                    <p>About Us</p>
+                </div>
+                <div>
+                    <p>Contact Us</p>
+                    <p><FontAwesomeIcon icon={faUser}/></p>
+                </div>
+
+            </nav>
+            <main>
+                <div>Home / Job</div>
+                <div>Job Listing</div>
+            </main>
+            <section>
+                <aside1>
+                    <input type="text" placeholder='Search'/>
+                    <input type="text" placeholder='Category'/>
+                    <div>line</div>
                     <div>
-                        <p>Categories</p>
-                        <p>About Us</p>
+                        <p>Job Type</p>
+                        <span>
+                                <p>Full time</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>Part time</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        {/*<span onClick={funcJobList} style={count ? {backgroundColor: "#0DC46E"}:null}>*/}
+                        <p>line</p>
                     </div>
                     <div>
-                        <p>Contact Us</p>
-                        <p><FontAwesomeIcon icon={faUser}/></p>
+                        <p>Last Activity</p>
+                        <span>
+                                <p>Last hour</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>Last 24 hour</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>Last 7 days</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>Last 15 days</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>All</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <p>line</p>
+
+                    </div>
+                    <div>
+                        <p>Salary Range</p>
+                        <span>
+                                <p>10k-20k</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>20k-30k</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>30k-40k</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>40k-50k</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>All</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <p>line</p>
+                    </div>
+                    <div>
+
+                        <p>Gender</p>
+                        <span>
+                                <p>Male</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <span>
+                                <p>Female</p>
+                                <p></p>
+                                <p></p>
+                            </span>
+                        <p>line</p>
                     </div>
 
-                </nav>
-                <main>
-                    <div>Home / Job</div>
-                    <div>Job Listing</div>
-                </main>
-                <section>
+                </aside1>
+                <aside2>
                     <div>
-                        <input type="text" placeholder='Search'/>
-                        <input type="text" placeholder='Category'/>
-                        <div></div>
+                        <img src={ironing} alt=""/>
                         <div>
-                            <p>Job TypeAAAAAA</p>
-                            <p>Full time</p>
-                            <p>Part time</p>
-                            <p onClick={funcJobList} style={count ? {backgroundColor: "#0DC46E", padding: "-10px"}
-                                : null}>
-                                <p></p></p>
-                            <p><p></p></p>
-                            <p></p>
+                            <p>Ironing</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+                            <span>
+                                <p><FontAwesomeIcon icon={faClock} color={'#0D0D0D'}/>Full Time</p>
+                                <p><FontAwesomeIcon icon={faLocation} color={'#0D0D0D'}/>Yerevan</p>
+                            </span>
                         </div>
                         <div>
-                            <p>Last Activity</p>
-                            <p>Last hour</p>
-                            <p>Last 24 hour</p>
-                            <p>Last 7 days</p>
-                            <p>Last 15 days</p>
-                            <p>All</p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p></p>
+                            <span>
+                                <FontAwesomeIcon icon={faHeart}/>
+                            </span>
+                            <p>Apply Now</p>
                         </div>
-                        <div>
-                            <p>Salary Range</p>
-                            <p>10k-20k</p>
-                            <p>20k-30k</p>
-                            <p>30k-40k</p>
-                            <p>40k-50k</p>
-                            <p>All</p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                            <p></p>
-                        </div>
-                        <div>
-                            <p>Gender</p>
-                            <p>Male</p>
-                            <p>Female</p>
-                            <p><p></p></p>
-                            <p><p></p></p>
-                        </div>
-
                     </div>
-                    <div>2</div>
-                </section>
-            </Styled.Container>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </aside2>
+            </section>
+            </body>
         </Styled.Root>
     );
 };
