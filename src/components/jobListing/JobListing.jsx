@@ -47,7 +47,7 @@ export const JobListing = () => {
                         <input type="text" placeholder='Category'/>
                         <div></div>
                         <div>
-                            <p>Job Type</p>
+                            <p>Job TypeAAAAAA</p>
                             <p>Full time</p>
                             <p>Part time</p>
                             <p onClick={funcJobList} style={count ? {backgroundColor: "#0DC46E", padding: "-10px"}
