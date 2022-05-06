@@ -3,6 +3,10 @@ import {Styled} from "./StyledHomePage";
 import {useHistory} from "react-router";
 import './Homepage.scss'
 
+
+
+
+
 export const HomePage = () => {
     const history=useHistory();
     const SignUp = (value) => {
@@ -12,6 +16,9 @@ export const HomePage = () => {
         history.push(value);
     }
     const JobListing = (value) => {
+        history.push(value);
+    }
+        const PasswordDisplay = (value) => {
         history.push(value);
     }
     return (
@@ -31,6 +38,7 @@ export const HomePage = () => {
             <div><button onClick={() => SignUp('SignUp')}>SignUp</button></div>
             <div><button onClick={() => SignIn('SignIn')}>SignIn</button></div>
             <div><button onClick={() => JobListing('JobListing')}>JobListing</button></div>
+            {/*<div><button onClick={() => PasswordDisplay('PasswordDisplay')}>Password</button></div>*/}
 
 
         </Styled.Container>
