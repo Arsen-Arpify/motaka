@@ -3,9 +3,8 @@ import {SHOW_PASS, RESHOW_PASS, CHECK_TYPE, CHECK_TYPE_PROV} from "../actions";
 const initialState = {
     isPasswordShow: false,
     isRePasswordShow:false,
-    isCheckedUser:false,
-    isCheckedProv:false,
-
+    isUser:false,
+    isProvider:false,
 };
 
 export const ReducerSignUp = (state = initialState, action) => {
@@ -33,18 +32,18 @@ export const ReducerSignUp = (state = initialState, action) => {
             case CHECK_TYPE:
 
                 if (action.payload === false) {
-                    return {...state, isCheckedUser: true};
+                    return {...state, isUser: true};
                 }
                 if (action.payload === true) {
-                    return {...state, isCheckedUser: false};
+                    return {...state, isUser: false};
                 }
             case CHECK_TYPE_PROV:
 
                 if (action.payload === false) {
-                    return {...state, isCheckedProv: true};
+                    return {...state, isProvider: true};
                 }
                 if (action.payload === true) {
-                    return {...state, isCheckedProv: false};
+                    return {...state, isProvider: false};
                 }
 
 

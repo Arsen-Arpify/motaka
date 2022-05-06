@@ -1,30 +1,30 @@
 import React from 'react';
-import {Styled} from "./StyledJobListing";
 import {faClock, faUser} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import create from "zustand";
 import ironing from "../image/ironing.jpg"
 import {faHeart} from "@fortawesome/free-regular-svg-icons";
 import {faLocation} from "@fortawesome/free-solid-svg-icons";
+import './StyleJobListing.scss'
 
 
 export const useStore = create((set) => ({
+    count1: '',
+    count2: '',
 
-    count: false,
-
-
-    funcJobList: () => set((state) => ({...state, count: !(state).count})),
-
+    funcJobList: () => set((state) => ({...state, count1: false, count2: !(state).count2})),
 }))
-
 export const JobListing = () => {
 
+    const {count1, count2, funcJobList} = useStore()
 
-    const {count, funcJobList} = useStore()
-    console.log(count)
+    const searchJob = () => {
+    }
+
+
     return (
-        <Styled.Root>
-            <body>
+        <header>
+            <div className='container'>
             <nav>
                 <div>JOB</div>
                 <div>
@@ -42,24 +42,23 @@ export const JobListing = () => {
                 <div>Job Listing</div>
             </main>
             <section>
-                <aside1>
-                    <input type="text" placeholder='Search'/>
+                <div className='aside1'>
+                    <input type="search" placeholder='Search...' onInput={searchJob}/>
                     <input type="text" placeholder='Category'/>
-                    <div>line</div>
+                    <div></div>
                     <div>
                         <p>Job Type</p>
                         <span>
                                 <p>Full time</p>
                                 <p></p>
-                                <p></p>
+                                <p onClick={funcJobList} style={count1 ? {backgroundColor: "#0DC46E"} : null}></p>
                             </span>
                         <span>
                                 <p>Part time</p>
                                 <p></p>
-                                <p></p>
+                                <p onClick={funcJobList} style={count2 ? {backgroundColor: "#0DC46E"} : null}></p>
                             </span>
-                        {/*<span onClick={funcJobList} style={count ? {backgroundColor: "#0DC46E"}:null}>*/}
-                        <p>line</p>
+                        <p></p>
                     </div>
                     <div>
                         <p>Last Activity</p>
@@ -88,7 +87,7 @@ export const JobListing = () => {
                                 <p></p>
                                 <p></p>
                             </span>
-                        <p>line</p>
+                        <p></p>
 
                     </div>
                     <div>
@@ -118,7 +117,7 @@ export const JobListing = () => {
                                 <p></p>
                                 <p></p>
                             </span>
-                        <p>line</p>
+                        <p></p>
                     </div>
                     <div>
 
@@ -133,12 +132,12 @@ export const JobListing = () => {
                                 <p></p>
                                 <p></p>
                             </span>
-                        <p>line</p>
+                        <p></p>
                     </div>
 
-                </aside1>
-                <aside2>
-                    <div>
+                </div>
+                <div className='aside2'>
+                    <div className='job1'>
                         <img src={ironing} alt=""/>
                         <div>
                             <p>Ironing</p>
@@ -155,14 +154,80 @@ export const JobListing = () => {
                             <p>Apply Now</p>
                         </div>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </aside2>
+                    <div className='job2'>
+                        <img src={ironing} alt=""/>
+                        <div>
+                            <p>Ironing</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+                            <span>
+                                <p><FontAwesomeIcon icon={faClock} color={'#0D0D0D'}/>Full Time</p>
+                                <p><FontAwesomeIcon icon={faLocation} color={'#0D0D0D'}/>Yerevan</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <FontAwesomeIcon icon={faHeart}/>
+                            </span>
+                            <p>Apply Now</p>
+                        </div>
+                    </div>
+                    <div className='job3'>
+                        <img src={ironing} alt=""/>
+                        <div>
+                            <p>Ironing</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+                            <span>
+                                <p><FontAwesomeIcon icon={faClock} color={'#0D0D0D'}/>Full Time</p>
+                                <p><FontAwesomeIcon icon={faLocation} color={'#0D0D0D'}/>Yerevan</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <FontAwesomeIcon icon={faHeart}/>
+                            </span>
+                            <p>Apply Now</p>
+                        </div>
+                    </div>
+                    <div className='job4'>
+                        <img src={ironing} alt=""/>
+                        <div>
+                            <p>Ironing</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+                            <span>
+                                <p><FontAwesomeIcon icon={faClock} color={'#0D0D0D'}/>Full Time</p>
+                                <p><FontAwesomeIcon icon={faLocation} color={'#0D0D0D'}/>Yerevan</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <FontAwesomeIcon icon={faHeart}/>
+                            </span>
+                            <p>Apply Now</p>
+                        </div>
+                    </div>
+                    <div className='job5'>
+                        <img src={ironing} alt=""/>
+                        <div>
+                            <p>Ironing</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+                            <span>
+                                <p><FontAwesomeIcon icon={faClock} color={'#0D0D0D'}/>Full Time</p>
+                                <p><FontAwesomeIcon icon={faLocation} color={'#0D0D0D'}/>Yerevan</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <FontAwesomeIcon icon={faHeart}/>
+                            </span>
+                            <p>Apply Now</p>
+                        </div>
+                    </div>
+
+
+                </div>
             </section>
-            </body>
-        </Styled.Root>
+            </div>
+        </header>
     );
 };
 

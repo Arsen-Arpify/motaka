@@ -1,16 +1,20 @@
 import React from 'react';
-import {Styled} from "./StyledSignIn";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
-import {faEyeSlash, faSquare} from "@fortawesome/free-solid-svg-icons";
+import {faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
 import {showPass} from "../../store/actions";
 import G from '../image/G.png'
 import F from '../image/F.png'
 import {useState} from "react";
+import {useHistory} from "react-router";
+import './StyleSignIn.scss'
 
 
 export const SignIn = () => {
+    const history=useHistory();
+    const SignUp = (value) => {
+        history.push(value);
+    }
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
     const {isPasswordShow, isRePasswordShow, isCheckedUser, isCheckedProv} = state
@@ -70,22 +74,22 @@ export const SignIn = () => {
     };
     return (
 
-        <Styled.Root>
+        <div className='container'>
 
-            <Styled.Left>
-                <Styled.Shape1>
-                </Styled.Shape1>
-                <Styled.Text>
+            <div className='left-bar'>
+                <div className='shape1'>
+                </div>
+                <div className='text'>
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please sign up with your personal info</p>
-                    <button>Sign Up</button>
-                </Styled.Text>
-                <Styled.Shape2>
-                </Styled.Shape2>
-            </Styled.Left>
-            <Styled.Right>
+                    <button onClick={() => SignUp('SignUp')}>Sign Up</button>
+                </div>
+                <div className='shape2'>
+                </div>
+            </div>
+            <div className='right_bar'>
                 <h1>Sign In to Motaka</h1>
-                <Styled.Social>
+                <div className='social'>
                     <div>
                         <img src={G} alt=""/>
                         <p>Sign up with Google</p>
@@ -95,13 +99,13 @@ export const SignIn = () => {
                         <p>Sign up with Facebook</p>
 
                     </div>
-                </Styled.Social>
+                </div>
                 <p>-OR-</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
-                        placeholder={'Nike Name'}
+                        placeholder={'User phone'}
                         type="text"
                         name="phone"
                         autoComplete={'current-phone'}
@@ -117,16 +121,16 @@ export const SignIn = () => {
                     <span onClick={() => funcPasswordShow(isPasswordShow)}><FontAwesomeIcon
                         icon={faEyeSlash}/> </span>
 
-                    <button>Sign Up</button>
+                    <button>Sign In</button>
 
                 </form>
-                <Styled.Forgot>
+                <div className='forgot_pass'>
                     <a href="">Forgot Password?</a>
-                </Styled.Forgot>
+                </div>
 
 
-            </Styled.Right>
-        </Styled.Root>
+            </div>
+        </div>
 
 
     );

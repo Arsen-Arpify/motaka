@@ -1,6 +1,7 @@
 import React from 'react';
 import {Styled} from "./StyledHomePage";
 import {useHistory} from "react-router";
+import './Homepage.scss'
 
 export const HomePage = () => {
     const history=useHistory();
@@ -30,6 +31,8 @@ export const HomePage = () => {
             <div><button onClick={() => SignUp('SignUp')}>SignUp</button></div>
             <div><button onClick={() => SignIn('SignIn')}>SignIn</button></div>
             <div><button onClick={() => JobListing('JobListing')}>JobListing</button></div>
+
+
         </Styled.Container>
 
 
