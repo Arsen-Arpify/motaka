@@ -56,7 +56,6 @@ export const SignUp = () => {
         formData.append("password", password);
         formData.append("passwordConfirm", passwordConfirm)
 
-
         let requestOptions = {
             method: 'POST',
             body: formData,
@@ -78,7 +77,14 @@ export const SignUp = () => {
 
     };
 
-
+    /*
+    (?=.*[a-z]) : matches letters lowercase .
+    (?=.*[A-Z]) : matches letters uppercase .
+    (?=.*[0-9]) : matches digit .
+    (?=.*[!@#\$%\^&\*_]) : matches special character .
+    (?=.{6,12}) : matches text length between 6 to 12 .
+    - for more info about regular expressions visit : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+    */
     return (
 
         <header className='header'>
@@ -170,7 +176,6 @@ export const SignUp = () => {
                                type='tel'
                                required
                     />
-
 
                     <div className='show_ase'>
                      <span onClick={() => funcPasswordShow(isPasswordShow)}>

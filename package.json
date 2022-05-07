@@ -22,6 +22,7 @@
     "combine-reducers": "^1.0.0",
     "cors": "^2.8.5",
     "create-serve": "^1.0.1",
+    "enzyme": "^3.11.0",
     "express": "^4.17.3",
     "formdata-node": "^4.3.2",
     "formik": "^2.2.9",

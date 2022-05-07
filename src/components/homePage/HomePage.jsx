@@ -2,7 +2,8 @@ import React from 'react';
 import {Styled} from "./StyledHomePage";
 import {useHistory} from "react-router";
 import './Homepage.scss'
-
+import PasswordValidator from '../password/PasswordValidator'
+import "./styles.css"
 
 
 
@@ -39,7 +40,7 @@ export const HomePage = () => {
             <div><button onClick={() => SignIn('SignIn')}>SignIn</button></div>
             <div><button onClick={() => JobListing('JobListing')}>JobListing</button></div>
             {/*<div><button onClick={() => PasswordDisplay('PasswordDisplay')}>Password</button></div>*/}
-
+            <PasswordValidator />
 
         </Styled.Container>
 
