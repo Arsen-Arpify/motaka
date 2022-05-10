@@ -1,82 +1,94 @@
-import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEyeSlash} from "@fortawesome/free-solid-svg-icons";
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {showPass} from "../../store/actions";
+import {showPass, reShowPass, checkType, checkTypeProv, capitalType, capitalOk} from "../../store/actions";
+import "./StyleSignIn.scss"
+import {useHistory} from "react-router";
+import InputMask from 'react-input-mask'
+import eyeOpen from '../image/eyeOpen.jpg'
+import eyeClosed from '../image/eyeClosed.jpg'
 import G from '../image/G.png'
 import F from '../image/F.png'
-import {useState} from "react";
-import {useHistory} from "react-router";
-import './StyleSignIn.scss'
 
 
 export const SignIn = () => {
-    const history=useHistory();
+
+    const history = useHistory();
     const SignUp = (value) => {
         history.push(value);
     }
     const dispatch = useDispatch();
     const state = useSelector((state) => state)
-    const {isPasswordShow, isRePasswordShow, isCheckedUser, isCheckedProv} = state
-
+    const {isPasswordShow} = state
     const funcPasswordShow = (payload) => {
         dispatch(showPass(payload))
     };
 
+    const initialState = {
+        value1: '',
+    }
+    const [special, setSpecial] = useState(initialState)
+    const {value1} = special
+
+    const handleChange1 = (e) => {
+        setSpecial({value1: e.target.value})
+
+    }
 
     const url = "https://motaka.herokuapp.com/login"
     const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
 
+    const [password, setPassword] = useState("");
 
     let handleSubmit = async (e) => {
         e.preventDefault();
-
-
         let formData = new FormData();
-
         formData.append("phone", phone);
+
         formData.append("password", password);
 
-        // console.log(formData);
 
         // let requestOptions = {
         //     method: 'POST',
         //     body: formData,
-        //     // headers:
-        //     //     {'Content-Type': 'application/json'}
+        //     headers: {'Content-Type': 'application/json'}
         // };
+        const allInput = phone === '' || password === ''
+        if (allInput) {
+            alert('Fill in all required fields')
+        }else
+        {
 
-        // fetch(url, requestOptions)
-        //     .then(response => response.text())
-        //     .then(result => console.log(result))
-        //     .catch(error => console.log('error', error));
+            fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
 
+                    password,
+                                      phone,
 
-        fetch('https://motaka.herokuapp.com/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                phone: phone,
-                password: password
-
-            }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
+                }),
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then(response => {
+                    // if (response.ok) {
+                    //     setVerification({isVerificationCode: true})
+                    // }
+                    console.log(response)
+                    return response.json()
+                })
+
+                .then(data => {
+
+                    console.log('Registration Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
     };
     return (
 
-        <div className='container'>
-
-            <div className='left-bar'>
+        <header className='header'>
+            <div className='aside_left'>
                 <div className='shape1'>
                 </div>
                 <div className='text'>
@@ -87,7 +99,7 @@ export const SignIn = () => {
                 <div className='shape2'>
                 </div>
             </div>
-            <div className='right_bar'>
+            <div className='aside_right'>
                 <h1>Sign In to Motaka</h1>
                 <div className='social'>
                     <div>
@@ -100,39 +112,51 @@ export const SignIn = () => {
 
                     </div>
                 </div>
-                <p>-OR-</p>
+                <p className='or'>-OR-</p>
+
                 <form onSubmit={handleSubmit}>
-                    <input
-                        value={phone}
-                        onChange={e => setPhone(e.target.value)}
-                        placeholder={'User phone'}
-                        type="text"
-                        name="phone"
-                        autoComplete={'current-phone'}
-                        required
+
+
+                    <InputMask className='form-control input1'
+                               mask="+374 99 999999" maskChar=""
+                               placeholder="Phone Number"
+                               name='phone'
+                               value={phone}
+                               onChange={e => setPhone(e.target.value)}
+                               autoComplete={'current-name'}
+                               type='tel'
+                               required
                     />
-                    <input type={isPasswordShow ? "text" : "password"} placeholder={'Password'}
+
+                    <input className='input4' placeholder={'Password'}
+                           type={isPasswordShow ? "text" : "password"}
+                           name='password'
                            value={password}
-                           autoComplete={'current-password'}
                            onChange={e => setPassword(e.target.value)}
-                           name="password"
+
+                           autoComplete={'current-name'}
+
                            required
                     />
-                    <span onClick={() => funcPasswordShow(isPasswordShow)}><FontAwesomeIcon
-                        icon={faEyeSlash}/> </span>
 
-                    <button>Sign In</button>
+
+                    <div className='show_eye'>
+
+                        <span onClick={() => funcPasswordShow(isPasswordShow)}>
+                        {isPasswordShow ? <img src={eyeClosed}/> : <img src={eyeOpen}/>} </span>
+                    </div>
+
+                    <button className='button'>Sign In</button>
 
                 </form>
                 <div className='forgot_pass'>
-                    <a href="">Forgot Password?</a>
+                    <p>Forgot Password?</p>
                 </div>
 
-
             </div>
-        </div>
+        </header>
 
 
     );
-};
+}
 

@@ -235,10 +235,10 @@ export const SignUp = () => {
 
                     <div className='show_eye'>
                      <span onClick={() => funcPasswordShow(isPasswordShow)}>
-                        {isPasswordShow?<img src={eyeClosed}/>:<img src={eyeOpen}/>}
+                        {isPasswordShow ? <img src={eyeClosed}/> : <img src={eyeOpen}/>}
                      </span>
                         <span onClick={() => reFuncPasswordShow(isRePasswordShow)}>
-                        {isRePasswordShow?<img src={eyeClosed}/>:<img src={eyeOpen}/>} </span>
+                        {isRePasswordShow ? <img src={eyeClosed}/> : <img src={eyeOpen}/>} </span>
                     </div>
 
                     <button className='button'>Sign Up</button>
@@ -256,7 +256,6 @@ export const SignUp = () => {
                             //onInput={handleChang}
                                    mask="9 9 9 9 9 9" maskChar="-"
                                    pattern="[0-9]"
-                                   maxLength='12'
                                    required
                         />
                         <button className='button'>Enter</button>
