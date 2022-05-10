@@ -1,4 +1,13 @@
-import {SHOW_PASS, RESHOW_PASS, CHECK_TYPE, CHECK_TYPE_PROV, CAPITAL_TYPE, CAPITAL_OK} from "../actions";
+import {
+    SHOW_PASS,
+    RESHOW_PASS,
+    CHECK_TYPE,
+    CHECK_TYPE_PROV,
+    CAPITAL_TYPE,
+    CAPITAL_OK,
+    VALUE_11,
+
+} from "../actions";
 
 const initialState = {
     isPasswordShow: false,
@@ -9,7 +18,9 @@ const initialState = {
     isaA_ZMin: false,
     is0_9: false,
     isSpecial: false,
-    isArsen: false,
+    isArsen:false,
+
+
 
 
 
@@ -55,14 +66,19 @@ export const ReducerSignUp = (state = initialState, action) => {
                 }
             case CAPITAL_TYPE:
 
-                if (action.payload === '55') {
+                if (action.payload === '400') {
                     return {...state, isArsen: true}
                 }
             case CAPITAL_OK:
 
-                if (action.payload === '50') {
+                if (action.payload === '200') {
                     return {...state, isArsen: false}
                 }
+            // case VALUE_11:
+            //
+            //     if (action.payload) {
+            //         return {...state, isArsen1: true}
+            //     }
 
 
 

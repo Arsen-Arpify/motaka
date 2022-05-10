@@ -6,6 +6,7 @@ export const CAPITAL_TYPE = "CAPITAL_TYPE";
 export const CAPITAL_OK = "CAPITAL_OK";
 export const VALUE_11 = "VALUE_11";
 
+
 export const showPass = (payload) => {
     return { type: SHOW_PASS, payload };
 };
@@ -23,6 +24,7 @@ export const capitalType = (payload) => {
 };
 export const capitalOk = (payload) => {
     return { type: CAPITAL_OK, payload };
-};export const value11 = (payload) => {
+};
+export const value11 = (payload) => {
     return { type: VALUE_11, payload };
 };
