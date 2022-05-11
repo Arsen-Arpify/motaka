@@ -58,12 +58,11 @@ export const SignUp = () => {
         colour5 = '#0DC46E'
     }
 
-    const url = "https://motaka.herokuapp.com/register"
+    //const url = "https://motaka.herokuapp.com/register"
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
-    const [passwordConfirm1, setPasswordConfirm1] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [verification, setVerification] = useState({isVerificationCode: false});
@@ -81,8 +80,7 @@ export const SignUp = () => {
         formData.append("isProvider", isProvider);
         formData.append("password", password);
         formData.append("passwordConfirm", passwordConfirm)
-        formData.append("passwordConfirm1", passwordConfirm1)
-        console.log(formData, 'AAAAAAa')
+
         // let requestOptions = {
         //     method: 'POST',
         //     body: formData,
@@ -96,19 +94,18 @@ export const SignUp = () => {
         if (password !== passwordConfirm) {
             dispatch(capitalType('400'))
         }
-        if (password === passwordConfirm1) {
+        if (password === passwordConfirm) {
             dispatch(capitalOk('200'))
         }
         if (!allInput && password === passwordConfirm) {
 
-            fetch(url, {
+            fetch("https://motaka.herokuapp.com/register", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     phone,
                     password,
                     passwordConfirm,
-                    passwordConfirm1,
                     email,
                     firstName,
                     lastName,
@@ -133,21 +130,61 @@ export const SignUp = () => {
                 });
         }
     };
+
+
+
+
+
+    const [confirmCode, setConfirmCode] = useState("");
+    const [phone1, setPhone1] = useState("");
+    let handleSubmit555 = async (e) => {
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append("confirmCode", confirmCode);
+        formData.append("phone", phone1);
+
+
+        fetch("https://motaka.herokuapp.com/phone_verification_code", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+
+                confirmCode,
+                phone1
+
+            }),
+        })
+            .then(response => {
+                // if (response.ok) {
+                //     setVerification({isVerificationCode: true})
+                // }
+                console.log(response)
+                return response.json()
+            })
+            .then(data => {
+                console.log('Registration Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+
     return (
 
-        <header className='header'>
-            <div className='aside_left'>
-                <div className='shape1'>
+        <header className='header_SignUp'>
+            <div className='aside_left_SignUp'>
+                <div className='shape1_reg'>
                 </div>
-                <div className='text'>
+                <div className='text_SignUp'>
                     <h1>HELLO Friend!</h1>
                     <p>Enter your personal details and start journey with us</p>
                     <button onClick={() => SignIn('SignIn')}>Sign In</button>
                 </div>
-                <div className='shape2'>
+                <div className='shape2_reg'>
                 </div>
             </div>
-            <div className='aside_right'>
+
+            <div className='aside_right_SignUp'>
                 <h1>Create Account</h1>
 
 
@@ -175,54 +212,59 @@ export const SignUp = () => {
                     </div>
 
 
-                    <input className='input1' type="text"
+                    <input className='input1_reg' type="text"
                            placeholder={'First Name'}
                            name='firstName'
                            value={firstName}
                            pattern="[a-zA-Z'-'\s]*"
                            title="Only Letters"
-                           minLength='4'
+                           minLength='2'
+                           maxLength='20'
                            onChange={e => setFirstName(e.target.value)}
-                           autoComplete={'current-name'}
+                           autoComplete={'firstName'}
                            required
                     />
 
-                    <input className='input2' type="text"
+                    <input className='input2_reg' type="text"
                            placeholder={'Last Name'}
                            name='lastName'
                            value={lastName}
+                           pattern="[a-zA-Z'-'\s]*"
+                           title="Only Letters"
+                           minLength='2'
+                           maxLength='25'
                            onChange={e => setLastName(e.target.value)}
-                           autoComplete={'current-name'}
+                           autoComplete={'lastName'}
                            required
                     />
-                    <input className='input3' type="email"
+                    <input className='input3_reg' type="email"
                            placeholder={'Email'}
                            name='email'
                            value={email}
                            onChange={e => setEmail(e.target.value)}
-                           autoComplete={'current-name'}
+                           autoComplete={'email'}
                            required
                     />
-                    <input className='input4' type={isPasswordShow ? "text" : "password"} placeholder={'Password'}
+                    <input className='input4_reg' type={isPasswordShow ? "text" : "password"} placeholder={'Password'}
                            name='password'
                            value={password}
                            onChange={e => setPassword(e.target.value)}
                            onInput={handleChange1}
-                           autoComplete={'current-name'}
+                           autoComplete={'password'}
                         // onFocus={()=>handleChange2()}
                            required
                     />
-                    <input className='input5' type={isRePasswordShow ? "text" : "password"}
-                           placeholder={'Reset Password'}
+                    <input className='input5_reg' type={isRePasswordShow ? "text" : "password"}
+                           placeholder={'Re-enter Password'}
                            name='passwordConfirm'
                            value={passwordConfirm}
+                           autoComplete={'password'}
                            onChange={e => setPasswordConfirm(e.target.value)}
-                           onBlur={e => setPasswordConfirm1(e.target.value)}
                            style={isArsen ? {borderColor: 'red'} : null}
                            required
 
                     />
-                    <InputMask className='form-control'
+                    <InputMask className='form-control_reg'
                                mask="+374 99 999999" maskChar=""
                                placeholder="Phone Number"
                                name='phone'
@@ -233,7 +275,7 @@ export const SignUp = () => {
                                required
                     />
 
-                    <div className='show_eye'>
+                    <div className='show_eye_reg'>
                      <span onClick={() => funcPasswordShow(isPasswordShow)}>
                         {isPasswordShow ? <img src={eyeClosed}/> : <img src={eyeOpen}/>}
                      </span>
@@ -241,24 +283,36 @@ export const SignUp = () => {
                         {isRePasswordShow ? <img src={eyeClosed}/> : <img src={eyeOpen}/>} </span>
                     </div>
 
-                    <button className='button'>Sign Up</button>
+                    <button className='button_reg'>Sign Up</button>
 
                 </form>
                 <div className='second_form'
                      style={isVerificationCode ? {visibility: 'visible'} : {visibility: 'hidden'}}>
-                    <form action="">
-                        <InputMask className='input6' placeholder={'Enter Confirm Code'}
-                                   name='confirmCode'
-                                   type='text'
+                    <form onSubmit={handleSubmit555}>
 
-                            // value={confirmCode}
-                            //onChange={e => setPassword(e.target.value)}
-                            //onInput={handleChang}
-                                   mask="9 9 9 9 9 9" maskChar="-"
-                                   pattern="[0-9]"
+                        <InputMask className='input7_reg'
+                                   mask="+374 99 999999" maskChar=""
+
+                                   name='phone'
+                                   value={phone}
+                                   onChange={e => setPhone1(e.target.value)}
+                                   autoComplete={'current-name'}
+                                   type='tel'
                                    required
                         />
-                        <button className='button'>Enter</button>
+
+                        <InputMask className='input6_reg' placeholder={'Enter Confirm Code'}
+                                   name='confirmCode'
+                                   type='text'
+                                   onChange={e => setConfirmCode(e.target.value)}
+                                   autoComplete={'current-name'}
+                                   value={confirmCode}
+                                   mask="999999" maskChar="-"
+                                   // pattern="[0-9]"
+
+                                   required
+                        />
+                        <button className='button_reg'>Enter</button>
                     </form>
                 </div>
 

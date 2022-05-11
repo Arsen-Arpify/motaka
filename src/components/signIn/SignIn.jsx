@@ -8,7 +8,8 @@ import eyeOpen from '../image/eyeOpen.jpg'
 import eyeClosed from '../image/eyeClosed.jpg'
 import G from '../image/G.png'
 import F from '../image/F.png'
-
+import GoogleLogin from "react-google-login";
+import FacebookLogin from 'react-facebook-login'
 
 export const SignIn = () => {
 
@@ -55,8 +56,7 @@ export const SignIn = () => {
         const allInput = phone === '' || password === ''
         if (allInput) {
             alert('Fill in all required fields')
-        }else
-        {
+        } else {
 
             fetch(url, {
                 method: 'POST',
@@ -64,7 +64,7 @@ export const SignIn = () => {
                 body: JSON.stringify({
 
                     password,
-                                      phone,
+                    phone,
 
                 }),
             })
@@ -85,6 +85,35 @@ export const SignIn = () => {
                 });
         }
     };
+
+    const successResponseGoogle = (response) => {
+
+        fetch("https://motaka.herokuapp.com/googleLogin", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                tokenId: response.tokenId
+            }),
+        })
+            .then(response => {
+                console.log(response)
+                return response.json()
+            })
+
+            .then(data => {
+                console.log('Registration Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+    const errorResponseGoogle = (response) => {
+        console.log(response, 'error')
+    }
+const successResponseFacebook=(response)=>{
+    console.log(response)
+    }
+
     return (
 
         <header className='header'>
@@ -101,17 +130,21 @@ export const SignIn = () => {
             </div>
             <div className='aside_right'>
                 <h1>Sign In to Motaka</h1>
-                <div className='social'>
-                    <div>
-                        <img src={G} alt=""/>
-                        <p>Sign up with Google</p>
-                    </div>
-                    <div>
-                        <img src={F} alt=""/>
-                        <p>Sign up with Facebook</p>
-
-                    </div>
-                </div>
+                {/*<div className='social'>*/}
+                {/*    <div>*/}
+                {/*        <GoogleLogin className='login_google'*/}
+                {/*            clientId="672599364365-tpf3f4okr12q4la8su1vrdhhd8gmsm2f.apps.googleusercontent.com"*/}
+                {/*            buttonText="SignUp with Google"*/}
+                {/*            onSuccess={successResponseGoogle}*/}
+                {/*            onFailure={errorResponseGoogle}*/}
+                {/*            cookiePolicy={'single_host_origin'}*/}
+                {/*        />,*/}
+                {/*    </div>*/}
+                {/*    <FacebookLogin className='login_facebook'*/}
+                {/*                   appId="732890848050124"*/}
+                {/*                   autoLoad={false}*/}
+                {/*                   callback={successResponseFacebook}/>,*/}
+                {/*</div>*/}
                 <p className='or'>-OR-</p>
 
                 <form onSubmit={handleSubmit}>

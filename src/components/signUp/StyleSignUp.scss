@@ -4,12 +4,12 @@
 }
 
 
-.form-control {
+.form-control_reg {
   position: absolute;
   width: 354px;
   height: 48px;
-  left: 170px;
-  top: 762px;
+  left: 108px;
+  top: 677px;
   border: 0.5px solid #D9DADB;
   box-sizing: border-box;
   border-radius: 10px;
@@ -19,38 +19,39 @@
 }
 
 
-.header {
+.header_SignUp {
   position: relative;
   display: flex;
-  width: 1728px;
-  height: 1195px;
+  width: 1440px;
+  height: 1024px;
 
 }
 
-.aside_left {
+.aside_left_SignUp {
   position: absolute;
-  width: 651px;
-  height: 1195px;
+  width: 491px;
+  height: 1024px;
   left: 0px;
   top: 0px;
   background: #FFFFFF;
   border-right: 1px solid #56D69A;
-
   overflow: hidden;
+
 }
 
-.shape1 {
+.shape1_reg {
   position: absolute;
   width: 554.87px;
   height: 554.87px;
   left: 330px;
-  top: -280px;
+  top: -320px;
   background: rgba(13, 196, 110, 0.7);
   border-radius: 160px;
   transform: rotate(-45deg);
+
 }
 
-.shape2 {
+.shape2_reg {
   position: relative;
   width: 554.87px;
   height: 554.87px;
@@ -61,18 +62,18 @@
   transform: rotate(-45deg);
 }
 
-.text {
+.text_SignUp {
   position: absolute;
   width: 337px;
   height: 282px;
-  left: 156px;
+  left: 65.5px;
   top: 457px;
 
   & h1 {
     position: absolute;
     width: 360px;
     height: 48px;
-    left: -10px;
+    left: 0px;
     top: -30px;
     font-family: 'Poppins';
     font-style: normal;
@@ -81,13 +82,14 @@
     line-height: 48px;
     letter-spacing: 0.05em;
     color: #0DC46E;
+    text-align: center;
   }
 
   & p {
     position: absolute;
     width: 314px;
     height: 50px;
-    left: 0px;
+    left: 23px;
     top: 70px;
     font-family: 'Poppins';
     font-style: normal;
@@ -96,13 +98,14 @@
     line-height: 140.4%;
     text-align: center;
     color: #777D88;
+
   }
 
   & button {
     position: absolute;
     width: 228px;
     height: 48px;
-    left: 40px;
+    left: 65.5px;
     top: 220px;
     border: 1px solid #0DC46E;
     box-sizing: border-box;
@@ -119,21 +122,23 @@
   }
 }
 
-.aside_right {
+.aside_right_SignUp {
 
   position: absolute;
-  width: 1079px;
-  height: 1195px;
-  left: 652px;
+  width: 949px;
+  height: 1024px;
+  left: 492px;
   top: 0px;
   background: #FFFFFF;
+
+
 
   .user {
     position: relative;
     width: 17px;
     height: 17px;
-    left: 555px;
-    top: 538px;
+    left: 487px;
+    top: 453px;
     border: 0.5px solid #0DC46E;
     box-sizing: border-box;
     border-radius: 4px;
@@ -157,8 +162,8 @@
     position: absolute;
     width: 17px;
     height: 17px;
-    left: 710px;
-    top: 538px;
+    left: 615px;
+    top: 453px;
     border: 0.5px solid #0DC46E;
     box-sizing: border-box;
     border-radius: 4px;
@@ -179,8 +184,8 @@
 
   .user_name {
     position: absolute;
-    top: 518px;
-    left: 600px;
+    top: 433.5px;
+    left: 532px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -194,8 +199,8 @@
 
   .provider_name {
     position: absolute;
-    top: 518px;
-    left: 760px;
+    top: 433.5px;
+    left: 660px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -214,34 +219,35 @@
     position: absolute;
     width: 513px;
     height: 64px;
-    left: 280px;
-    top: 210px;
+    left: 220px;
+    top: 130px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 64px;
     line-height: 64px;
     color: #0DC46E;
+    text-align: center;
   }
 
-  .input1 {
+  .input1_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    left: 170px;
-    top: 522px;
+    left: 108px;
+    top: 437px;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
   }
 
-  .input2 {
+  .input2_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    left: 170px;
-    top: 602px;
+    left: 108px;
+    top: 517px;
     background: #FFFFFF;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
@@ -249,24 +255,24 @@
     padding: 5px;
   }
 
-  .input3 {
+  .input3_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    left: 170px;
-    top: 682px;
+    left: 108px;
+    top: 597px;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
   }
 
-  .input4 {
+  .input4_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    right: 170px;
-    top: 602px;
+    right: 108px;
+    top: 517px;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
     border-radius: 10px;
@@ -278,23 +284,24 @@
     //}
   }
 
-  .input5 {
+  .input5_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    right: 170px;
-    top: 682px;
+    right: 108px;
+    top: 597px;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
   }
-  .input6 {
+
+  .input6_reg {
     position: absolute;
     width: 354px;
     height: 48px;
-    right: 170px;
-    top: 762px;
+    right: 108px;
+    top: 677px;
     border: 0.5px solid #D9DADB;
     box-sizing: border-box;
     border-radius: 10px;
@@ -353,12 +360,12 @@
 
     }*/
 
-  .button {
+  .button_reg {
     position: absolute;
     width: 228px;
     height: 48px;
-    left: 425px;
-    top: 890px;
+    left: 366px;
+    top: 810px;
     background: #0DC46E;
     border-radius: 10px;
     font-family: 'Poppins';
@@ -372,14 +379,15 @@
     cursor: pointer;
   }
 
-  .show_eye {
+  .show_eye_reg {
     span:first-child {
       color: #A3A3A3;
       position: absolute;
-      top: 615px;
-      right: 180px;
+      top: 532px;
+      right: 115px;
       cursor: pointer;
-      img{
+
+      img {
         width: 20px;
       }
     }
@@ -387,10 +395,11 @@
     span:last-child {
       color: #A3A3A3;
       position: absolute;
-      top: 700px;
-      right: 180px;
+      top: 612px;
+      right: 115px;
       cursor: pointer;
-      img{
+
+      img {
         width: 20px;
       }
     }
@@ -402,8 +411,8 @@
   align-items: center;
   gap: 5px;
   position: absolute;
-  top: 645px;
-  left: 555px;
+  top: 558px;
+  left: 488px;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -414,7 +423,8 @@
   p {
     margin-right: 8px;
   }
-  & p:first-child{
+
+  & p:first-child {
     color: #A3A3A3;
   }
 }
@@ -496,20 +506,33 @@
 
 }*/
 
-.second_form{
+.second_form {
   position: absolute;
-  width: 1079px;
-  height: 1195px;
+  width: 949px;
+  height: 1024px;
   left: 0px;
   top: 0px;
   background: rgba(255, 255, 255, 0.73);
   z-index: 10;
-  .input6{
-    border: 3px solid #d9dadb;
+
+  .input6 {
+    border: 0.5px solid #d9dadb;
   }
 }
 
+.input7_reg {
+  position: absolute;
+  top: 980px;
+  left: -491px;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  border-inline: none;
+}
 
+.input7_reg:focus {
+  visibility: hidden;
+}
 
 
 
