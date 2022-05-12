@@ -1,6 +1,7 @@
 import { HomePage } from "../components/homePage";
 import { SignUp } from "../components/signUp";
 import { SignIn } from "../components/signIn";
+import Jobpost from "../components/post/Jobpost"
 import { JobListing } from "../components/jobListing";
 import Verification from "../components/verification/Verification";
 import Forgotpass from "../components/ForgotPassowrd/Forgotpass";
@@ -35,5 +36,10 @@ export const routes = [
     path: "/ForgotPass",
     exact: true,
     page: () => <Forgotpass />,
+  },
+  {
+    path: "/Jobpost",
+    exact: true,
+    page: () => <Jobpost />,
   },
 ];

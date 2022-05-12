@@ -1,5 +1,6 @@
 import React from "react";
 import "./forgotpassowrd.scss"
+import PhoneInput from 'react-phone-input-2'
 
 const Forgotpass = () => {
   return (
