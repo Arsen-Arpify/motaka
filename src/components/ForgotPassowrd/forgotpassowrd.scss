@@ -1,0 +1,72 @@
+.password {
+  overflow: hidden;
+  width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.password_text {
+  margin-top: 250px;
+}
+
+.password_text p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 64px;
+  color: #0dc46e;
+}
+
+.password_content p {
+  margin: auto;
+  width: 610px;
+  height: 60px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #777d88;
+}
+
+.pasword_input {
+  margin-top: 70px;
+}
+
+.pasword_input input {
+  margin-bottom: 30px;
+  padding-left: 15px;
+  width: 480px;
+  height: 50px;
+  background: rgba(229, 229, 229, 0.19);
+  border: 0.5px solid #d9dadb;
+  border-radius: 10px;
+}
+
+.pasword_input p {
+  display: flex;
+  align-items: justify;
+  margin-left: 470px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: #1f2833;
+}
+
+.password_button button {
+  margin-top: 120px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+  color: #ffffff;
+  width: 230px;
+  height: 50px;
+  background: #0dc46e;
+  border-radius: 10px;
+}

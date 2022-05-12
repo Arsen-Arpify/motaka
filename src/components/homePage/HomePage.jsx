@@ -5,6 +5,7 @@ import './Homepage.scss'
 import {value11} from "../../store/actions";
 import "./styles.css"
 import {useDispatch, useSelector} from "react-redux";
+import Verification from '../verification/Verification';
 
 
 
@@ -17,6 +18,12 @@ export const HomePage = () => {
         history.push(value);
     }
     const JobListing = (value) => {
+        history.push(value);
+    }
+    const Verification = (value) => {
+        history.push(value);
+    }
+    const ForgotPass = (value) => {
         history.push(value);
     }
 
@@ -43,6 +50,13 @@ export const HomePage = () => {
             <div>
                 <button onClick={() => JobListing('JobListing')}>JobListing</button>
             </div>
+            <div>
+                <button onClick={() => Verification('Verification')}>Verification</button>
+            </div>
+            <div>
+                <button onClick={() => ForgotPass('ForgotPass')}>ForgotPass</button>
+            </div>
+
 
 
 
