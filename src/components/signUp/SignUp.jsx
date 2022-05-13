@@ -212,7 +212,7 @@ export const SignUp = () => {
                     </div>
 
 
-                    <input className='input1_reg' type="text"
+                    <input className='input1_reg'
                            placeholder={'First Name'}
                            name='firstName'
                            value={firstName}
@@ -290,15 +290,7 @@ export const SignUp = () => {
                      style={isVerificationCode ? {visibility: 'visible'} : {visibility: 'hidden'}}>
                     <form onSubmit={handleSubmit555}>
 
-                        <InputMask className='input7_reg'
-                                   mask="+374 99 999999" maskChar=""
-
-                                   name='phone'
-                                   value={phone}
-                                   onChange={e => setPhone1(e.target.value)}
-                                   autoComplete={'current-name'}
-                                   type='tel'
-                                   required
+                        <div>{phone}</div>
                         />
 
                         <InputMask className='input6_reg' placeholder={'Enter Confirm Code'}

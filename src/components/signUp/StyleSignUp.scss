@@ -13,7 +13,7 @@
   border: 0.5px solid #D9DADB;
   box-sizing: border-box;
   border-radius: 10px;
-  color: #707280;
+  color: #000;
   padding: 5px;
 
 }
@@ -43,8 +43,8 @@
   position: absolute;
   width: 554.87px;
   height: 554.87px;
-  left: 330px;
-  top: -320px;
+  left: 220px;
+  top: -300px;
   background: rgba(13, 196, 110, 0.7);
   border-radius: 160px;
   transform: rotate(-45deg);
@@ -55,8 +55,8 @@
   position: relative;
   width: 554.87px;
   height: 554.87px;
-  left: -290px;
-  top: 890px;
+  left: -310px;
+  top: 800px;
   background: rgba(13, 196, 110, 0.7);
   border-radius: 160px;
   transform: rotate(-45deg);
@@ -240,6 +240,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
   }
 
   .input2_reg {
@@ -253,6 +254,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
   }
 
   .input3_reg {
@@ -265,6 +267,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
   }
 
   .input4_reg {
@@ -277,6 +280,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
 
     //&:focus {
     //  outline-color: red
@@ -294,6 +298,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
   }
 
   .input6_reg {
@@ -306,6 +311,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    color: #000;
   }
 
   .special-label { /*Phone Number Input*/
