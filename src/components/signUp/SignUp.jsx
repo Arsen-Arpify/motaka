@@ -241,6 +241,8 @@ export const SignUp = () => {
                            placeholder={'Email'}
                            name='email'
                            value={email}
+                           minLength='5'
+                           maxLength='50'
                            onChange={e => setEmail(e.target.value)}
                            autoComplete={'email'}
                            required
@@ -251,7 +253,8 @@ export const SignUp = () => {
                            onChange={e => setPassword(e.target.value)}
                            onInput={handleChange1}
                            autoComplete={'password'}
-                        // onFocus={()=>handleChange2()}
+                           minLength='8'
+                           maxLength='25'
                            required
                     />
                     <input className='input5_reg' type={isRePasswordShow ? "text" : "password"}
@@ -259,6 +262,8 @@ export const SignUp = () => {
                            name='passwordConfirm'
                            value={passwordConfirm}
                            autoComplete={'password'}
+                           minLength='8'
+                           maxLength='25'
                            onChange={e => setPasswordConfirm(e.target.value)}
                            style={isArsen ? {borderColor: 'red'} : null}
                            required

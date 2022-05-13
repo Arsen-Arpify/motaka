@@ -165,6 +165,8 @@ const successResponseFacebook=(response)=>{
                            type={isPasswordShow ? "text" : "password"}
                            name='password'
                            value={password}
+                           minLength='8'
+                           maxLength='25'
                            onChange={e => setPassword(e.target.value)}
 
                            autoComplete={'current-name'}

@@ -8,7 +8,20 @@ import Vector from '../image/Vector.jpg'
 import IconPerson from '../image/IconPerson.jpg'
 import IconList from '../image/IconList.jpg'
 import IconList1 from '../image/IconList1.jpg'
-
+import Fl from '../image/Fl.jpg'
+import Star from '../image/Star.jpg'
+import Star1 from '../image/Star1.jpg'
+import FBGreen from '../image/FBGreen.jpg'
+import InstagramGreen from '../image/InstagramGreen.jpg'
+import TelegramGreen from '../image/TelegramGreen.jpg'
+import Location from '../image/Location.jpg'
+import Phone from '../image/Phone.jpg'
+import email from '../image/email.jpg'
+import iron from '../image/iron.jpg'
+import laundry from '../image/laundry.jpg'
+import plumbing from '../image/plumbing.jpg'
+import technology from '../image/technology.jpg'
+import beauty from '../image/beauty.jpg'
 
 
 export const HomePage = () => {
@@ -33,8 +46,8 @@ export const HomePage = () => {
                         <p>About Us</p>
                     </div>
                     <div>
-                                      <img src={chat} alt=""/>
-                        <button>Sign Up</button>
+                        <img src={chat} alt=""/>
+                        <button onClick={() => SignUp('SignUp')}>Sign Up</button>
                     </div>
                 </div>
                 <div className='title_homePage'>
@@ -70,35 +83,35 @@ export const HomePage = () => {
                         </div>
                     </div>
                     <div className='categories1'>
-                        <span><img src={Vector} alt=""/></span>
+                        <span><img src={laundry} alt=""/></span>
                         <div>
                             <p>Laundry</p>
                             <p>Lorem ipsum dolor sit </p>
                         </div>
                     </div>
                     <div className='categories1'>
-                        <span><img src={Vector} alt=""/></span>
+                        <span><img src={iron} alt=""/></span>
                         <div>
                             <p>Ironing</p>
                             <p>Lorem ipsum dolor sit </p>
                         </div>
                     </div>
                     <div className='categories1'>
-                        <span><img src={Vector} alt=""/></span>
+                        <span><img src={plumbing} alt=""/></span>
                         <div>
                             <p>Plumbing</p>
                             <p>Lorem ipsum dolor sit </p>
                         </div>
                     </div>
                     <div className='categories1'>
-                        <span><img src={Vector} alt=""/></span>
+                        <span><img src={technology} alt=""/></span>
                         <div>
                             <p>Technology</p>
                             <p>Lorem ipsum dolor sit </p>
                         </div>
                     </div>
                     <div className='categories1'>
-                        <span><img src={Vector} alt=""/></span>
+                        <span><img src={beauty} alt=""/></span>
                         <div>
                             <p>Beauty</p>
                             <p>Lorem ipsum dolor sit </p>
@@ -153,35 +166,102 @@ export const HomePage = () => {
                 <div className='topWorkers_homePage'>
                     <div id='title_topWorkers'>
                         <div>Top <span> Workers</span></div>
-                        <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+                        <div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </div>
                     </div>
                     <div id='user_workers1'>
-                        <div></div>
+                        <div><img src={Fl} alt=""/></div>
                         <p>Sam William</p>
                         <p>UI/UX Designer</p>
                         <span><p>View</p></span>
-                        <div>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
+                        <div className='star_workers'>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star1} alt=""/>
                         </div>
                     </div>
-                    <div id='user_workers2'></div>
-                    <div id='user_workers3'></div>
-                    <div id='user_workers4'></div>
+                    <div id='user_workers2'>
+                        <div><img src={Fl} alt=""/></div>
+                        <p>Sam William</p>
+                        <p>UI/UX Designer</p>
+                        <span><p>View</p></span>
+                        <div className='star_workers'>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star1} alt=""/>
+                        </div>
+                    </div>
+                    <div id='user_workers3'>
+                        <div><img src={Fl} alt=""/></div>
+                        <p>Sam William</p>
+                        <p>UI/UX Designer</p>
+                        <span><p>View</p></span>
+                        <div className='star_workers'>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star1} alt=""/>
+                        </div>
+                    </div>
+                    <div id='user_workers4'>
+                        <div><img src={Fl} alt=""/></div>
+                        <p>Sam William</p>
+                        <p>UI/UX Designer</p>
+                        <span><p>View</p></span>
+                        <div className='star_workers'>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star} alt=""/>
+                            <img src={Star1} alt=""/>
+                        </div>
+                    </div>
                     <div>
                         <span></span>
                         <span></span>
                         <span></span>
+                    </div>
+                    <div className='end_page'>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+
+                </div>
+                <div className='footer_homePage'>
+                    <span></span>
+                    <div>
+                        <p>Job</p>
+                        <p>Start Your Career Here With 1000+ Best Jobs For You</p>
+                    </div>
+                    <div>
+                        <p>Company</p>
+                        <p>Categories</p>
+                        <p>About Us</p>
+                    </div>
+                    <div>
+                        <p>Contacts</p>
+                        <p><img src={Location} alt=""/> Baghramyan 18</p>
+
+                        <p><img src={Phone} alt=""/> +374 41 277439</p>
+
+                        <p><img src={email} alt=""/> arpifytech@gmail.com</p>
+
+                    </div>
+                    <div>
+                        <img src={FBGreen} alt=""/>
+                        <img src={InstagramGreen} alt=""/>
+                        <img src={TelegramGreen} alt=""/>
                     </div>
                 </div>
-                <div className='buttons_homePage'>
-                    <div>
-                        <button onClick={() => SignUp('SignUp')}>SignUp</button>
-                    </div>
-                    <div>
+                <div className='buttons_bar'>
+                                       <div>
                         <button onClick={() => SignIn('SignIn')}>SignIn</button>
                     </div>
                     <div>
